@@ -1,0 +1,24 @@
+<h3>{{ tagline }}</h3>
+
+
+<form ng-submit="updateStudent()"> <!-- ng-submit will disable the default form action and use our function -->
+
+    <!-- AUTHOR -->
+    <div class="form-group">
+        <input type="text" class="form-control input-sm" name="student" ng-model="studentData.student">
+    </div>
+
+    <!-- COMMENT TEXT -->
+    <div class="form-group">
+        <input type="text" class="form-control input-lg" name="quote" ng-model="studentData.quote">
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="form-group text-right">   
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</form>
+
+<!-- LOADING ICON =============================================== -->
+<!-- show loading icon if the loading variable is set to true -->
+<p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>

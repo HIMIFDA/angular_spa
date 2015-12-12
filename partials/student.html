@@ -1,0 +1,60 @@
+<h3>{{ tagline }}</h3>
+
+<div ng-hide="formSubmit">
+    <form ng-submit="submitStudent()" enctype="multipart/form-data"> <!-- ng-submit will disable the default form action and use our function -->
+
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" name="student" ng-model="studentData.student" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" name="quote" ng-model="studentData.quote" placeholder="Say what you have to say">
+        </div>
+    
+        <div class="form-group">
+            <input type="file" class="form-control input-lg" name="photo" ng-model="studentData.photo">
+        </div>
+
+        <div class="form-group text-right">   
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<div ng-show="formEdit" class="col-md-4">
+    <form ng-submit="updateStudent()"> <!-- ng-submit will disable the default form action and use our function -->
+        
+        <input type="hidden" name="id" ng-model="student.id">
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" name="student" ng-model="student.student" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" name="quote" ng-model="student.quote" placeholder="Say what you have to say">
+        </div>
+
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg">Update</button>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- LOADING ICON =============================================== -->
+<!-- show loading icon if the loading variable is set to true -->
+<p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
+
+
+<div class="col-md-12">
+    <div class="student col-md-4" ng-repeat="row in students">
+        <h3>Data # {{ row.id }} <small>by {{ row.student }}</h3>
+        <p>{{ row.quote }}</p>
+
+        <p><a href="" ng-click="deleteStudent(row.id)" class="text-muted">Delete</a></p>
+        <p><a href="" ng-click="editStudent(row.id)" class="text-muted">Edit</a></p>
+    </div>
+
+    
+</div>

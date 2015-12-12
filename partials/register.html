@@ -1,0 +1,25 @@
+<h3>{{ tagline }}</h3>
+
+<form ng-submit="doRegister()">
+	
+	<div class="form-group">
+		<input type="text" name="name" class="form-control" placeholder="Name.." ng-model="registerData.name">
+	</div>
+
+	<div class="form-group">
+		<input type="text" name="email" class="form-control" placeholder="Email.." ng-model="registerData.email">
+	</div>
+
+	<div class="form-group">
+		<input type="password" name="password" class="form-control" placeholder="Password" ng-model="registerData.password">
+	</div>
+
+	<div class="form-group">
+		<input type="password" name="password_confirmation" class="form-control" placeholder="Re-password"  ng-model="registerData.password_confirmation">
+	</div>
+
+	<div class="form-group">
+		<input type="submit" name="submit" class="btn btn-primary">
+	</div>
+
+</form>
