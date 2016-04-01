@@ -32,3 +32,4 @@ spaApp.config(function ($routeProvider) {
 			})
 		.otherwise({ redirectTo: '/'});
 });
+
